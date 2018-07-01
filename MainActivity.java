@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -118,6 +119,23 @@ public class MainActivity extends AppCompatActivity {
             errorChecker = false;
         }
 
+        //Get answers from checkboxes
+        CheckBox togoSelection = findViewById(R.id.togo_checkbox);
+        CheckBox cameroonSelection = findViewById(R.id.cameroon_checkbox);
+        CheckBox lesothoSelection = findViewById(R.id.lesotho_checkbox);
+        CheckBox angolaSelection = findViewById(R.id.angola_checkbox);
+
+        boolean togo = togoSelection.isChecked();
+        boolean cameroon = cameroonSelection.isChecked();
+        boolean lesotho = lesothoSelection.isChecked();
+        boolean angola = angolaSelection.isChecked();
+
+        if ((togo == true)&& (cameroon == true)&&(lesotho==false)&&angola==false){
+            maxPoints += 1;
+        }else if ((togo == false)&& (cameroon == false)&&(lesotho==false)&&angola==false){
+            errorChecker = true;
+        }
+
     }
     /*******
      *
@@ -129,8 +147,22 @@ public class MainActivity extends AppCompatActivity {
         ((RadioGroup)findViewById(R.id.radio_Burundi)).clearCheck();
         ((RadioGroup)findViewById(R.id.radio_Malawi)).clearCheck();
         ((RadioGroup)findViewById(R.id.radio_Mozambique)).clearCheck();
+
+        //Clear the edit text input
         EditText textInput = (EditText) findViewById(R.id.name_of_buyer);
         textInput.getText().clear();
+
+        //uncheck all checkboxes
+        CheckBox togoSelection = findViewById(R.id.togo_checkbox);
+        CheckBox cameroonSelection = findViewById(R.id.cameroon_checkbox);
+        CheckBox lesothoSelection = findViewById(R.id.lesotho_checkbox);
+        CheckBox angolaSelection = findViewById(R.id.angola_checkbox);
+        togoSelection.setChecked(false);
+        cameroonSelection.setChecked(false);
+        lesothoSelection.setChecked(false);
+        angolaSelection.setChecked(false);
+
+        //Reset points
         maxPoints = 0;
     }
 
@@ -141,7 +173,7 @@ public class MainActivity extends AppCompatActivity {
         //Output the results only if there is no error in the inputs
         if (errorChecker == false) {
             Toast.makeText(getApplicationContext(),
-                    "you got " + maxPoints + " correct", Toast.LENGTH_SHORT).show();
+                    "you got " + maxPoints + " correct out of " +6, Toast.LENGTH_SHORT).show();
             Log.v("Quiz app", " " + maxPoints);
             maxPoints = 0;
         }
