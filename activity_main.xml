@@ -188,8 +188,47 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:inputType="textCapWords"
-                android:layout_marginBottom="48dp"
+                android:layout_marginBottom="8dp"
                 android:hint="Enter name here"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Which countries share the same year of independence (select two)?"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textAllCaps="false" />
+
+            <CheckBox
+                android:id="@+id/angola_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="Angola"
+                android:textSize="16dp" />
+            <CheckBox
+                android:id="@+id/togo_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="Togo"
+                android:textSize="16dp" />
+            <CheckBox
+                android:id="@+id/cameroon_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:text="Cameroon"
+                android:textSize="16dp" />
+            <CheckBox
+                android:id="@+id/lesotho_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="48dp"
+                android:paddingLeft="24dp"
+                android:text="Lesothoo"
+                android:textSize="16dp" />
+
 
         </LinearLayout>
 
@@ -200,7 +239,7 @@
             android:layout_alignParentLeft="true"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/button_shape"
+            android:background="@drawable/btn_shape_round"
             android:onClick="submitAnswers"
             android:text="submit"
             android:textAlignment="center"
@@ -213,7 +252,7 @@
         android:layout_alignParentRight="true"
         android:layout_marginTop="24dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/button_shape"
+        android:background="@drawable/btn_shape_round"
         android:onClick="clearInputs"
         android:text="clear"
         android:textAlignment="center"
