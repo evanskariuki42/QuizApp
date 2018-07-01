@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
         lesothoSelection.setChecked(false);
         angolaSelection.setChecked(false);
 
-        //Reset points
+        //Reset points to zero
         maxPoints = 0;
     }
 
