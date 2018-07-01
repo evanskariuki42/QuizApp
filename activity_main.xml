@@ -194,12 +194,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentLeft="true"
             android:layout_marginTop="24dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="24dp"
+            android:paddingLeft="24dp"
             android:onClick="submitAnswers"
             android:text="submit"
             android:textAllCaps="true"
             android:textColor="#c8001e" />
-    </RelativeLayout>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:onClick="clearInputs"
+        android:text="clear"
+        android:textAllCaps="true"
+        android:textColor="#c8001e" />
+</RelativeLayout>
 </ScrollView>
